@@ -1,3 +1,5 @@
+export const dynamic = 'force-static';
+
 const trials = [
   ['01', 'Сила', 'Одно чистое приседание с другим участником гильдии на плечах.'],
   ['02', 'Ловкость', 'Каскад: уверенно жонглировать тремя предметами в течение трёх циклов.'],
@@ -8,9 +10,9 @@ const trials = [
 ];
 
 const tracks = [
-  { no: '01', title: 'НОГИ В РУКИ ФОНК', note: 'Гильдейский фонк', src: '/media/phonk.mp3' },
-  { no: '02', title: 'Тоска', note: 'Ашу Кадим', src: '/media/toska.mp3' },
-  { no: '03', title: 'Как Артёма друзей потерял', note: 'Баллада', src: '/media/ballad.mp3' },
+  { no: '01', title: 'НОГИ В РУКИ ФОНК', note: 'Гильдейский фонк', src: 'media/phonk.mp3' },
+  { no: '02', title: 'Тоска', note: 'Ашу Кадим', src: 'media/toska.mp3' },
+  { no: '03', title: 'Как Артёма друзей потерял', note: 'Баллада', src: 'media/ballad.mp3' },
 ];
 
 function AudioCard({ no, title, note, src }: { no: string; title: string; note: string; src: string }) {
@@ -31,13 +33,13 @@ export default function Home() {
         <div className="navlinks">
           <a href="#about">О гильдии</a><a href="#hymn">Гимн</a><a href="#history">История</a><a href="#music">Музыка</a>
         </div>
-        <a className="nav-cta" href="/chronicles">Летописи <span>↗</span></a>
+        <a className="nav-cta" href="chronicles/">Летописи <span>↗</span></a>
       </nav>
 
       <section id="top" className="hero" aria-labelledby="hero-title">
         <p className="hero-kicker">Гильдия настольных ролевых игр</p>
         <h1 id="hero-title">НОГИ<span className="mobile-break"><br /></span> В РУКИ</h1>
-        <img className="hero-crest" src="/media/crest.png" alt="Герб гильдии «Ноги в Руки»" />
+        <img className="hero-crest" src="media/crest.png" alt="Герб гильдии «Ноги в Руки»" />
         <p className="hero-motto">Протяни гильдии руку —<br />она протянет тебе ногу.</p>
         <div className="hero-foot"><span>Авендум · все миры · все планы</span><a href="#hymn">Листать вниз ↓</a></div>
       </section>
@@ -49,7 +51,7 @@ export default function Home() {
         <div className="hymn-title"><p>ГИМН</p><h2>ГИЛЬДИИ</h2></div>
         <div className="hymn-player">
           <div className="vinyl" aria-hidden="true"><span>НВР</span></div>
-          <div><p className="eyebrow">Remastered</p><h3>Гимн гильдии</h3><audio controls preload="metadata" aria-label="Гимн гильдии, обновлённая версия"><source src="/media/hymn.mp3" type="audio/mpeg" /></audio></div>
+          <div><p className="eyebrow">Remastered</p><h3>Гимн гильдии</h3><audio controls preload="metadata" aria-label="Гимн гильдии, обновлённая версия"><source src="media/hymn.mp3" type="audio/mpeg" /></audio></div>
         </div>
       </section>
 
@@ -87,12 +89,12 @@ export default function Home() {
           <article><span>Ⅳ</span><h3>Виндеголь</h3><p>Поместье графа стало главной резиденцией, а союз со сприганами добавил фею на столичный герб.</p></article>
           <article><span>Ⅴ</span><h3>Эра теней</h3><p>Падение резиденции не уничтожило гильдию. Уцелевшие ушли в подполье, сохранив ярость, память и имя.</p></article>
         </div>
-        <a className="big-link" href="/chronicles"><span>Открыть все летописи</span><b>↗</b></a>
+        <a className="big-link" href="chronicles/"><span>Открыть все летописи</span><b>↗</b></a>
       </section>
 
       <section className="heraldry section-frame">
         <div className="heraldry-copy"><div className="section-label light"><span>05</span><span>Геральдика</span></div><h2>ГЕРБ,<br />У КОТОРОГО<br />ЕСТЬ ПАМЯТЬ</h2><p>Монета — нажива и благословение Вокин. Четыре конечности — искусство, почта, мастерство кузнецов и память о павших. Фея — союз со сприганами. Дым — знак цехового центра.</p></div>
-        <div className="heraldry-image"><img src="/media/crest.png" alt="Герб гильдии крупным планом" /></div>
+        <div className="heraldry-image"><img src="media/crest.png" alt="Герб гильдии крупным планом" /></div>
       </section>
 
       <section id="music" className="music section-frame">
@@ -102,8 +104,8 @@ export default function Home() {
       </section>
 
       <section className="archive-cta section-frame">
-        <img src="/media/dark-crest.png" alt="Тёмный герб гильдии" />
-        <div><p className="eyebrow">У монеты две стороны</p><h2>ВСЯ ИСТОРИЯ<br />ЖИВЁТ В ЛЕТОПИСЯХ</h2><p>Монета, допрос Гаррета, падение резиденции, эпохи гильдмастеров и секрет тёмного крыла — без сокращений.</p><a href="/chronicles">Читать всё <span>↗</span></a></div>
+        <img src="media/dark-crest.png" alt="Тёмный герб гильдии" />
+        <div><p className="eyebrow">У монеты две стороны</p><h2>ВСЯ ИСТОРИЯ<br />ЖИВЁТ В ЛЕТОПИСЯХ</h2><p>Монета, допрос Гаррета, падение резиденции, эпохи гильдмастеров и секрет тёмного крыла — без сокращений.</p><a href="chronicles/">Читать всё <span>↗</span></a></div>
       </section>
 
       <footer><div className="footer-mark">НОГИ<br />В РУКИ</div><div><p>Гильдия настольных ролевых игр</p><p>Авендум и за его пределами</p></div><a href="#top">Наверх ↑</a></footer>

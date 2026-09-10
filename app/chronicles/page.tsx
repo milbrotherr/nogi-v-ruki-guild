@@ -1,5 +1,7 @@
 import { chroniclesSource } from './chronicles-source';
 
+export const dynamic = 'force-static';
+
 const clean = (value: string) => value
   .replace(/\\([!&-])/g, '$1')
   .replace(/\*\*/g, '')
@@ -19,8 +21,8 @@ function ChronicleText() {
   const blocks = chroniclesSource.trim().split(/\n\s*\n/);
   return <>{blocks.map((block, index) => {
     const value = block.trim();
-    if (value === '![][image1]') return <img className="chronicle-image" src="/media/crest.png" alt="Герб гильдии" key={index} />;
-    if (value === '![][image3]') return <img className="chronicle-image dark" src="/media/dark-crest.png" alt="Тёмный герб гильдии" key={index} />;
+    if (value === '![][image1]') return <img className="chronicle-image" src="../media/crest.png" alt="Герб гильдии" key={index} />;
+    if (value === '![][image3]') return <img className="chronicle-image dark" src="../media/dark-crest.png" alt="Тёмный герб гильдии" key={index} />;
     if (value === '---') return <hr key={index} />;
     if (value.startsWith('#')) {
       const level = value.match(/^#+/)?.[0].length ?? 1;
@@ -35,7 +37,7 @@ function ChronicleText() {
 export default function ChroniclesPage() {
   return (
     <main className="chronicles-shell">
-      <nav className="topbar archive-nav" aria-label="Навигация по летописям"><a className="wordmark" href="/">НВР</a><span>Архив гильдии</span><a className="nav-cta" href="/">На главную <span>↙</span></a></nav>
+      <nav className="topbar archive-nav" aria-label="Навигация по летописям"><a className="wordmark" href="../">НВР</a><span>Архив гильдии</span><a className="nav-cta" href="../">На главную <span>↙</span></a></nav>
       <header className="chronicles-hero"><p>Без сокращений и редакторских изменений</p><h1>ЛЕТОПИСИ</h1></header>
       <div className="chronicles-layout">
         <aside><p>Содержание</p><a href="#crest">Герб</a><a href="#coin">История про монету</a><a href="#library">Летопись из библиотеки</a><a href="#two-sides">У монеты две стороны</a><a href="#masters">История гильдмастеров</a></aside>
