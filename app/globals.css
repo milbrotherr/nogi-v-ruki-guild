@@ -3,7 +3,7 @@
 :root { --paper:#e7d5b8; --ink:#242323; --red:#d84a35; --gold:#d3a02f; --pale:#f2e6d2; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
-body { margin:0; background:var(--ink); color:var(--ink); font-family:Arial,Helvetica,sans-serif; }
+body { margin:0; overflow-x:hidden; background:var(--ink); color:var(--ink); font-family:Arial,Helvetica,sans-serif; }
 a { color:inherit; text-decoration:none; }
 button, audio { font:inherit; }
 .site-shell,.chronicles-shell { min-height:100vh; padding:10px; background:var(--ink); }
@@ -21,6 +21,7 @@ button, audio { font:inherit; }
 .hero::before,.manifesto::before { content:''; position:absolute; inset:0; opacity:.12; background-image:radial-gradient(#242323 .8px,transparent .8px); background-size:7px 7px; pointer-events:none; }
 .hero-kicker { position:absolute; top:5%; left:4%; margin:0; font-weight:700; }
 .hero h1 { position:absolute; inset:8% 0 auto; margin:0; text-align:center; font:900 clamp(4.2rem,13vw,12rem)/.84 Arial Black,Arial,sans-serif; letter-spacing:-.08em; color:var(--red); white-space:nowrap; }
+.mobile-break { display:none; }
 .hero-crest { position:relative; z-index:2; width:min(44vw,520px); max-height:67vh; object-fit:contain; filter:drop-shadow(0 22px 18px rgba(36,35,35,.24)); transform:rotate(-1deg); animation:crest-float 6s ease-in-out infinite; }
 @keyframes crest-float { 50% { transform:translateY(-10px) rotate(1deg); } }
 .hero-motto { position:absolute; right:4%; bottom:17%; z-index:3; margin:0; max-width:320px; font:900 clamp(1.15rem,2.1vw,2rem)/1.05 Arial Black,Arial,sans-serif; text-transform:uppercase; }
@@ -81,3 +82,68 @@ footer { min-height:45vh; margin-top:10px; padding:5vw; display:grid; grid-templ
 @media (max-width:900px){.navlinks{display:none}.topbar{grid-template-columns:1fr auto}.topbar>span{display:none}.hero{min-height:calc(100svh - 96px)}.hero h1{top:12%;font-size:18vw}.hero-crest{width:76vw;max-height:60vh}.hero-motto{right:6%;bottom:15%;font-size:1.05rem}.hero-foot span{display:none}.hero-foot{justify-content:flex-end}.hymn-title{padding-top:13vh}.hymn-player{grid-template-columns:1fr}.vinyl{width:100px}.manifesto-grid{width:auto;margin-left:34vw;grid-template-columns:1fr}.frog{width:45vw}.numbers{grid-template-columns:1fr}.number-card{min-height:48vh}.split-heading,.history-intro,.music-heading{grid-template-columns:1fr}.trial-row{grid-template-columns:55px 1fr}.trial-row p{grid-column:2}.history-steps article{grid-template-columns:70px 1fr}.history-steps article p{grid-column:2}.heraldry{grid-template-columns:1fr}.heraldry-copy{min-height:80vh}.archive-cta{grid-template-columns:1fr}.archive-cta img{max-height:60vh}.archive-cta>div{padding:3vh 7vw 8vh}.chronicles-layout{grid-template-columns:1fr}.chronicles-layout aside{position:relative;top:0}.chronicle-prose{padding:7vw}.chronicles-hero img{opacity:.55;width:52vw}footer{grid-template-columns:1fr}.footer-mark{margin-bottom:10vh}}
 @media (max-width:560px){.site-shell,.chronicles-shell{padding:6px}.topbar{padding-left:18px;margin-bottom:6px}.nav-cta{font-size:.78rem}.hero{border-radius:0 0 28px 28px}.section-frame,.ticker,footer{margin-top:6px;border-radius:28px}.hero-kicker{font-size:.75rem}.hero h1{top:14%;font-size:17vw}.hero-crest{width:92vw}.hero-motto{left:7%;right:auto;bottom:17%}.section-label{padding:24px 24px 0}.hymn-player{margin:5vh 18px;padding:20px}.manifesto-lead{margin-left:24px;margin-right:24px;font-size:13.5vw}.manifesto-grid{margin:8vh 24px 0;grid-template-columns:1fr}.frog{position:relative;left:-10%;bottom:-12vh;width:75vw;margin-top:-8vh}.number-card{padding:26px}.number-card strong{font-size:48vw}.split-heading,.history-intro,.music-heading{padding-left:24px;padding-right:24px}.split-heading h2,.history-intro h2,.heraldry h2,.music-heading h2,.archive-cta h2{font-size:15vw}.trial-row{padding:22px 24px;gap:16px}.history-steps{padding:0 14px 10vh}.history-steps article{padding:26px 20px;grid-template-columns:1fr;top:70px!important}.history-steps article p{grid-column:1}.big-link{margin:0 14px;padding:22px;font-size:1.1rem}.big-link b{width:48px;height:48px}.heraldry h2,.heraldry-copy>p{margin-left:24px;margin-right:24px}.tracks{margin:0 18px}.track-card{grid-template-columns:40px 1fr;padding:25px 0}.track-card audio{grid-column:1/-1}.chronicles-hero{min-height:55vh}.chronicles-hero h1{font-size:20vw}.chronicles-layout{gap:6px;margin-top:6px}.chronicles-layout aside{border-radius:28px}.chronicle-prose{border-radius:28px;padding:28px 22px;font-size:1rem;line-height:1.65}.chronicle-prose h2{font-size:12vw}footer{padding:34px 24px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-crest,.ticker div{animation:none}}
+
+/* Compact layout rebuilt around content flow rather than desktop positioning. */
+@media (max-width:560px){
+  .topbar{min-height:58px;padding:8px 9px 8px 17px}
+  .wordmark{font-size:1.05rem}
+  .nav-cta{gap:8px;padding:8px 9px 8px 14px;font-size:.76rem}
+  .nav-cta span{width:25px;height:25px}
+  .hero{min-height:calc(100svh - 76px);padding:22px;display:grid;grid-template-rows:auto auto minmax(240px,1fr) auto auto;align-items:center}
+  .hero-kicker{position:static;font-size:.72rem}
+  .hero h1{position:static;align-self:start;margin-top:6vh;font-size:20vw;line-height:.74;white-space:normal;text-align:left}
+  .mobile-break{display:inline}
+  .hero-crest{position:static;align-self:center;justify-self:center;width:min(64vw,260px);max-height:40vh;margin:0;animation:none}
+  .hero-motto{position:static;max-width:none;margin:8px 0 14px;font-size:.96rem}
+  .hero-foot{position:static;width:100%;font-size:.7rem}
+  .ticker div{font-size:.88rem}
+  .hymn{min-height:auto;padding-bottom:1px}
+  .hymn-title{padding:9vh 20px 0}
+  .hymn-title p,.hymn-title h2{font-size:18vw}
+  .hymn-player{margin:4vh 14px 14px;padding:18px;gap:18px}
+  .hymn-player h3{font-size:1.75rem}
+  .vinyl{width:82px}
+  .manifesto{min-height:auto;padding-bottom:70px}
+  .manifesto-lead{margin-left:22px;margin-right:22px;font-size:13.4vw;line-height:.86}
+  .manifesto-grid{margin:7vh 22px 0;grid-template-columns:1fr;gap:18px;font-size:1rem}
+  .number-card{min-height:380px;padding:24px}
+  .number-card strong{font-size:43vw}
+  .number-card span{font-size:1.35rem}
+  .split-heading,.history-intro,.music-heading{padding:7vh 22px 5vh}
+  .split-heading h2,.history-intro h2,.heraldry h2,.music-heading h2,.archive-cta h2{font-size:14.5vw}
+  .split-heading p,.history-intro p,.music-heading p{font-size:1rem}
+  .trial-row{min-height:0;padding:22px;gap:12px;grid-template-columns:36px 1fr}
+  .trial-row h3{font-size:1.7rem}
+  .trial-row p{grid-column:1/-1;font-size:.95rem}
+  .history-steps{padding:0 10px 7vh}
+  .history-steps article{position:relative;top:auto!important;min-height:0;margin-bottom:10px;padding:25px 20px;grid-template-columns:1fr;gap:10px}
+  .history-steps article span{font-size:2.7rem}
+  .history-steps article h3{font-size:2.6rem}
+  .history-steps article p{grid-column:1;margin:5px 0 0;font-size:1rem}
+  .big-link{margin:0 10px;padding:17px 17px 17px 21px;font-size:1rem}
+  .big-link b{width:42px;height:42px;flex:0 0 auto}
+  .heraldry-copy{min-height:auto;padding-bottom:7vh}
+  .heraldry h2,.heraldry-copy>p{margin-left:22px;margin-right:22px}
+  .heraldry-copy>p{font-size:1rem}
+  .heraldry-image{padding:5vh 20px}
+  .music{padding-bottom:6vh}
+  .tracks{margin:0 16px}
+  .track-card{min-height:0;grid-template-columns:34px 1fr;padding:24px 0;gap:10px}
+  .track-copy h3{font-size:1.55rem;overflow-wrap:anywhere}
+  .track-card audio{grid-column:1/-1;height:44px;min-width:0}
+  .archive-cta img{width:78%;max-height:52vh}
+  .archive-cta>div{padding:2vh 22px 7vh}
+  .archive-cta>div>p:not(.eyebrow){font-size:1rem}
+  .chronicles-hero{min-height:43vh;padding:28px 22px}
+  .chronicles-hero p{max-width:210px;font-size:.72rem}
+  .chronicles-hero h1{left:18px;bottom:18px;font-size:15vw;line-height:.8}
+  .chronicles-layout>*{min-width:0;max-width:100%}
+  .chronicles-layout aside{width:100%;padding:24px}
+  .chronicle-prose{padding:30px 20px;font-size:1rem;line-height:1.62}
+  .chronicle-prose h2{font-size:11.5vw;overflow-wrap:anywhere}
+  .chronicle-prose h3{font-size:1.65rem;overflow-wrap:anywhere}
+  .secret-stamp{font-size:10vw!important;border-width:4px;padding:18px}
+  .chronicle-image.dark{padding:12px;border-radius:20px}
+  footer{min-height:0;padding:48px 22px 28px}
+  .footer-mark{margin-bottom:5vh;font-size:20vw}
+}

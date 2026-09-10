@@ -36,7 +36,7 @@ export default function Home() {
 
       <section id="top" className="hero" aria-labelledby="hero-title">
         <p className="hero-kicker">Гильдия настольных ролевых игр</p>
-        <h1 id="hero-title">НОГИ В РУКИ</h1>
+        <h1 id="hero-title">НОГИ<span className="mobile-break"><br /></span> В РУКИ</h1>
         <img className="hero-crest" src="/media/crest.png" alt="Герб гильдии «Ноги в Руки»" />
         <p className="hero-motto">Протяни гильдии руку —<br />она протянет тебе ногу.</p>
         <div className="hero-foot"><span>Авендум · все миры · все планы</span><a href="#hymn">Листать вниз ↓</a></div>
@@ -61,7 +61,6 @@ export default function Home() {
           <p>Мы собрались благодаря любви к настольным ролевым играм. Здесь царит открытая, дружелюбная и неформальная атмосфера.</p>
           <p>Полевые игры, кабинки, поездки и домашние встречи — мы всегда находим повод увидеться и поддержать новую движуху.</p>
         </div>
-        <img className="frog" src="/media/frog.png" alt="Лягушка выглядывает из-за блока" />
       </section>
 
       <section className="numbers section-frame" aria-label="Гильдия в цифрах">

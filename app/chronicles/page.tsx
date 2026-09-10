@@ -36,7 +36,7 @@ export default function ChroniclesPage() {
   return (
     <main className="chronicles-shell">
       <nav className="topbar archive-nav" aria-label="Навигация по летописям"><a className="wordmark" href="/">НВР</a><span>Архив гильдии</span><a className="nav-cta" href="/">На главную <span>↙</span></a></nav>
-      <header className="chronicles-hero"><p>Без сокращений и редакторских изменений</p><h1>ЛЕТОПИСИ</h1><img src="/media/frog.png" alt="" /></header>
+      <header className="chronicles-hero"><p>Без сокращений и редакторских изменений</p><h1>ЛЕТОПИСИ</h1></header>
       <div className="chronicles-layout">
         <aside><p>Содержание</p><a href="#crest">Герб</a><a href="#coin">История про монету</a><a href="#library">Летопись из библиотеки</a><a href="#two-sides">У монеты две стороны</a><a href="#masters">История гильдмастеров</a></aside>
         <article className="chronicle-prose"><ChronicleText /></article>
