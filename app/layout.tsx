@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import '@fontsource-variable/montserrat/wght.css';
 import './globals.css';
 
 export const dynamic = 'force-static';

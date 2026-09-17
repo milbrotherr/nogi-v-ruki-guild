@@ -12,22 +12,22 @@ const trials = [
 const founders = [
   {
     name: 'Гонтар',
-    description: 'Добросердечный паладин Крепкой Наковальни, несущий веру, молот и честь.',
+    description: 'Доблестный паладин с большим сердцем',
     image: 'media/gontar.png',
   },
   {
-    name: 'Гаррет Тень',
-    description: 'Демиург, забывший собственное творение, и величайший вор, случайно ставший героем.',
+    name: 'Гаррет',
+    description: 'Спокойный странник с необычным взглядом на мир',
     image: 'media/garrett-shadow.png',
   },
   {
     name: 'Элия',
-    description: 'Несокрушимая жрица кузни, мастер материалов, пожертвовавшая собой ради друзей.',
+    description: 'Сердце кузни и мастер великих свершений',
     image: 'media/elia.png',
   },
   {
     name: 'Эйдвен',
-    description: 'Эльфийка-исследовательница, шагнувшая за пределы миров, разума, жизни и смерти.',
+    description: 'Любознательная путешественница между мирами',
     image: null,
   },
 ];
@@ -58,7 +58,7 @@ export default function Home() {
         <div className="hymn-title"><p>ГИМН</p><h2>ГИЛЬДИИ</h2></div>
         <div className="hymn-player">
           <div className="vinyl" aria-hidden="true"><span>НВР</span></div>
-          <div><p className="eyebrow">Remastered</p><h3>Гимн гильдии</h3><audio controls preload="metadata" aria-label="Гимн гильдии, обновлённая версия"><source src="media/hymn.mp3" type="audio/mpeg" /></audio></div>
+          <div><h3>Гимн гильдии</h3><audio controls preload="metadata" aria-label="Гимн гильдии"><source src="media/hymn.mp3" type="audio/mpeg" /></audio></div>
         </div>
       </section>
 
@@ -70,11 +70,22 @@ export default function Home() {
           <p>Мы собрались благодаря любви к игровой и гик-культуре. Здесь царит открытая, дружелюбная и неформальная атмосфера.</p>
           <p>Полевые игры, кабинки, поездки и домашние встречи — мы всегда находим повод увидеться и поддержать новую движуху.</p>
         </div>
+        <div className="guild-photos" aria-label="Фотографии гильдии">
+          {[
+            ['guild-01.jpg', 'Участники гильдии за игровым столом под гербом', '4032', '3024'],
+            ['guild-02.jpg', 'Участники гильдии на костюмированной игре', '1280', '957'],
+            ['guild-03.jpg', 'Встреча гильдии за настольной ролевой игрой Fate', '3024', '4032'],
+            ['guild-04.jpg', 'Друзья из гильдии на прогулке', '2560', '1920'],
+            ['guild-05.jpg', 'Домашняя встреча гильдии за чаем', '3008', '3024'],
+            ['guild-06.jpg', 'Настольная игра при свечах', '1280', '960'],
+            ['guild-07.jpg', 'Гильдия за игровым столом со свечами', '2560', '1920'],
+            ['guild-08.jpg', 'Участники гильдии играют в настольную игру', '1280', '961'],
+          ].map(([image, description, width, height]) => <img key={image} src={`media/${image}`} alt={description} width={Number(width)} height={Number(height)} loading="lazy" decoding="async" />)}
+        </div>
       </section>
 
       <section id="founders" className="founders section-frame">
-        <div className="section-label"><span>03</span><span>Отцы-основатели</span></div>
-        <div className="founders-heading"><h2>ТЕ, С КОГО<br />ВСЁ НАЧАЛОСЬ</h2></div>
+        <div className="founders-heading"><h2><span>ТЕ, С КОГО ВСЁ</span><span>НАЧАЛОСЬ</span></h2></div>
         <div className="founders-grid">
           {founders.map((founder) => (
             <article className="founder-card" key={founder.name}>
@@ -103,13 +114,13 @@ export default function Home() {
 
       <section id="history" className="history section-frame">
         <div className="section-label"><span>05</span><span>Краткая история</span></div>
-        <div className="history-intro"><h2>ЭПОХИ<br />ВЛАСТИ</h2><p>Пять эпох правления — от круга Отцов-Основателей до современной эры Василисы.</p></div>
+        <div className="history-intro"><h2>ЭПОХИ<br />ВЛАСТИ</h2><p>Пять эпох правления — от круга Отцов-Основателей до современной эры Далии Сильвершейд.</p></div>
         <div className="history-steps">
           <article><span>Ⅰ</span><h3>Архаика и Первородный Хаос</h3><p>Эпоха Отцов-Основателей. Гильдмастера ещё не существовало, гильдия жила в чатах WhatsApp, а управление строилось на прямом вмешательстве Основателей.</p></article>
-          <article><span>Ⅱ</span><h3>Великая Реформация</h3><p>Даниил Мильбрат совершил Исход в Telegram, выстроил новую систему и стал Первым Гильдмастером.</p></article>
-          <article><span>Ⅲ</span><h3>Смутное Время</h3><p>Правление Екатерины Охотниковой стало Аниме-Ренессансом и эпохой мягкой силы. Её статус Второго Гильдмастера или И.О. остался предметом споров.</p></article>
-          <article><span>Ⅳ</span><h3>Реставрация</h3><p>Даниил вернулся к короткому второму правлению, а затем решил подготовить преемника и окончательно оставить пост.</p></article>
-          <article><span>Ⅴ</span><h3>Эра Василисы</h3><p>Василиса Шкляр была назначена преемницей. Формально — И.О., де-факто — Третий Гильдмастер, ведущий гильдию в современную эпоху.</p></article>
+          <article><span>Ⅱ</span><h3>Великая Реформация</h3><p>Людвиг Ван Бе совершил Исход в Telegram, выстроил новую систему и стал Первым Гильдмастером.</p></article>
+          <article><span>Ⅲ</span><h3>Смутное Время</h3><p>Правление Амелии стало Аниме-Ренессансом и эпохой мягкой силы. Её статус Второго Гильдмастера или И.О. остался предметом споров.</p></article>
+          <article><span>Ⅳ</span><h3>Реставрация</h3><p>Людвиг Ван Бе вернулся к короткому второму правлению, а затем решил подготовить преемника и окончательно оставить пост.</p></article>
+          <article><span>Ⅴ</span><h3>Эра Далии Сильвершейд</h3><p>Далия Сильвершейд была назначена преемницей. Формально — И.О., де-факто — Третий Гильдмастер, ведущий гильдию в современную эпоху.</p></article>
         </div>
         <a className="big-link" href="chronicles/"><span>Открыть все летописи</span><b>↗</b></a>
       </section>

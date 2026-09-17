@@ -18,7 +18,7 @@ const idFor = (title: string) => {
 };
 
 function ChronicleText() {
-  const blocks = chroniclesSource.trim().split(/\n\s*\n/);
+  const blocks = chroniclesSource.trim().replace(/(!\[\]\[image\d+\])/g, '\n\n$1\n\n').split(/\n\s*\n/);
   return <>{blocks.map((block, index) => {
     const value = block.trim();
     if (value === '![][image1]') return <img className="chronicle-image" src="../media/crest.png" alt="Герб гильдии" key={index} />;
@@ -36,7 +36,7 @@ function ChronicleText() {
 
 export default function ChroniclesPage() {
   return (
-    <main className="chronicles-shell">
+    <main id="top" className="chronicles-shell">
       <nav className="topbar archive-nav" aria-label="Навигация по летописям"><a className="wordmark" href="../">НВР</a><span>Архив гильдии</span><a className="nav-cta" href="../">На главную <span>↙</span></a></nav>
       <header className="chronicles-hero"><p>Без сокращений и редакторских изменений</p><h1>ЛЕТОПИСИ</h1></header>
       <div className="chronicles-layout">
