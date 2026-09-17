@@ -21,7 +21,7 @@ function ChronicleText() {
   const blocks = chroniclesSource.trim().replace(/(!\[\]\[image\d+\])/g, '\n\n$1\n\n').split(/\n\s*\n/);
   return <>{blocks.map((block, index) => {
     const value = block.trim();
-    if (value === '![][image1]') return <img className="chronicle-image" src="../media/crest.png" alt="Герб гильдии" key={index} />;
+    if (value === '![][image1]') return <img className="chronicle-image" src="../media/crest.webp" fetchPriority="high" alt="Герб гильдии" key={index} />;
     if (value === '![][image3]') return null;
     if (value === '---') return <hr key={index} />;
     if (value.startsWith('#')) {

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import SiteLoader, { loaderStart, loaderStyles } from './site-loader';
 
 export const dynamic = 'force-static';
 
@@ -14,8 +15,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
-      <body>{children}</body>
+    <html lang="ru" suppressHydrationWarning>
+      <head><style dangerouslySetInnerHTML={{ __html: loaderStyles }} /><script dangerouslySetInnerHTML={{ __html: loaderStart }} /></head>
+      <body>{children}<SiteLoader /></body>
     </html>
   );
 }

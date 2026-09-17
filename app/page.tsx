@@ -46,7 +46,7 @@ export default function Home() {
       <section id="top" className="hero" aria-labelledby="hero-title">
         <p className="hero-kicker">Гильдия игровой и гик-культуры</p>
         <h1 id="hero-title">НОГИ<span className="mobile-break"><br /></span> В РУКИ</h1>
-        <img className="hero-crest" src="media/crest.png" alt="Герб гильдии «Ноги в Руки»" />
+        <img className="hero-crest" src="media/crest.webp" fetchPriority="high" alt="Герб гильдии «Ноги в Руки»" />
         <p className="hero-motto">Протяни гильдии руку —<br />она протянет тебе ногу.</p>
         <div className="hero-foot"><span>Авендум · все миры · все планы</span><a href="#hymn">Листать вниз ↓</a></div>
       </section>
@@ -91,7 +91,7 @@ export default function Home() {
             <article className="founder-card" key={founder.name}>
               <div className="founder-figure">
                 {founder.image ? (
-                  <img src={founder.image} alt={`Фигурка персонажа ${founder.name}`} />
+                  <img src={founder.image} loading="lazy" decoding="async" alt={`Фигурка персонажа ${founder.name}`} />
                 ) : (
                   <div className="founder-placeholder" role="img" aria-label="Изображение Эйдвен появится позже">
                     <span>?</span><small>Изображение появится позже</small>
@@ -127,7 +127,7 @@ export default function Home() {
 
       <section className="heraldry section-frame">
         <div className="heraldry-copy"><div className="section-label light"><span>06</span><span>Геральдика</span></div><h2>ГЕРБ,<br />У КОТОРОГО<br />ЕСТЬ ПАМЯТЬ</h2><p>Монета — стремление к наживе, свойственное искателям приключений. Четыре конечности — искусство, почта, мастерство кузнецов и память о павших. Фея — союз со сприганами. Дым — знак цехового центра.</p></div>
-        <div className="heraldry-image"><img src="media/crest.png" alt="Герб гильдии крупным планом" /></div>
+        <div className="heraldry-image"><img src="media/crest.webp" loading="lazy" alt="Герб гильдии крупным планом" /></div>
       </section>
 
       <section className="archive-cta section-frame">
@@ -135,7 +135,7 @@ export default function Home() {
       </section>
 
       <section id="telegram" className="telegram section-frame">
-        <div className="telegram-art"><img src="media/telegram-channel.png" alt="Логотип Telegram-канала гильдии" /></div>
+        <div className="telegram-art"><img src="media/telegram-channel.png" loading="lazy" alt="Логотип Telegram-канала гильдии" /></div>
         <div className="telegram-copy">
           <div className="section-label"><span>07</span><span>Telegram</span></div>
           <p className="eyebrow">Гильдия на связи</p>
@@ -145,6 +145,10 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="join" className="join section-frame">
+        <img className="guildmaster-avatar" src="media/guildmaster.webp" alt="Великий Гильдмастер" width="400" height="400" loading="lazy" />
+        <div><h2>КАК ВСТУПИТЬ</h2><p>Напиши в регистратуру Гильдии. Там тебя примет Великий Гильдмастер и всё расскажет.</p><a href="https://t.me/c/1629114747/141200" target="_blank" rel="noreferrer">Написать в регистратуру ↗</a></div>
+      </section>
       <footer><div className="footer-mark">НОГИ<br />В РУКИ</div><div><p>Гильдия игровой и гик-культуры</p><p>Авендум и за его пределами</p></div><a href="#top">Наверх ↑</a></footer>
     </main>
   );
