@@ -147,7 +147,7 @@ export default function Home() {
 
       <section id="join" className="join section-frame">
         <img className="guildmaster-avatar" src="media/guildmaster.webp" alt="Великий Гильдмастер" width="400" height="400" loading="lazy" />
-        <div><h2>КАК ВСТУПИТЬ</h2><p>Напиши в регистратуру Гильдии. Там тебя примет Великий Гильдмастер и всё расскажет.</p><a href="https://t.me/c/1629114747/141200" target="_blank" rel="noreferrer">Написать в регистратуру ↗</a></div>
+        <div><h2>КАК ВСТУПИТЬ</h2><p>Напиши в регистратуру Гильдии. Там тебя примет Великий Гильдмастер и всё расскажет.</p><a href="https://t.me/gildmasternvrbot" target="_blank" rel="noreferrer">Написать в регистратуру ↗</a></div>
       </section>
       <footer><div className="footer-mark">НОГИ<br />В РУКИ</div><div><p>Гильдия игровой и гик-культуры</p><p>Авендум и за его пределами</p></div><a href="#top">Наверх ↑</a></footer>
     </main>
