@@ -6,7 +6,7 @@ export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: 'Гильдия «Ноги в Руки»',
-  description: 'История, летописи и музыка гильдии «Ноги в Руки».',
+  description: 'История и летописи гильдии игровой и гик-культуры «Ноги в Руки».',
 };
 
 export default function RootLayout({

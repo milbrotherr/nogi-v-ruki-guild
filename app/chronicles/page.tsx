@@ -22,7 +22,7 @@ function ChronicleText() {
   return <>{blocks.map((block, index) => {
     const value = block.trim();
     if (value === '![][image1]') return <img className="chronicle-image" src="../media/crest.png" alt="Герб гильдии" key={index} />;
-    if (value === '![][image3]') return <img className="chronicle-image dark" src="../media/dark-crest.png" alt="Тёмный герб гильдии" key={index} />;
+    if (value === '![][image3]') return null;
     if (value === '---') return <hr key={index} />;
     if (value.startsWith('#')) {
       const level = value.match(/^#+/)?.[0].length ?? 1;
