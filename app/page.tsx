@@ -13,22 +13,30 @@ const founders = [
   {
     name: 'Гонтар',
     description: 'Доблестный паладин с большим сердцем',
-    image: 'media/gontar.png',
+    image: 'media/gontar.webp',
+    width: 1024,
+    height: 1536,
   },
   {
     name: 'Гаррет',
     description: 'Спокойный странник с необычным взглядом на мир',
-    image: 'media/garrett-shadow.png',
+    image: 'media/garrett-shadow.webp',
+    width: 853,
+    height: 1280,
   },
   {
     name: 'Элия',
     description: 'Сердце кузни и мастер великих свершений',
-    image: 'media/elia.png',
+    image: 'media/elia.webp',
+    width: 1024,
+    height: 1536,
   },
   {
     name: 'Эйдвен',
     description: 'Любознательная путешественница между мирами',
-    image: 'media/aydwen.png',
+    image: 'media/aydwen.webp',
+    width: 1024,
+    height: 1536,
   },
 ];
 
@@ -90,7 +98,7 @@ export default function Home() {
           {founders.map((founder) => (
             <article className="founder-card" key={founder.name}>
               <div className="founder-figure">
-                <img src={founder.image} loading="lazy" decoding="async" alt={`Фигурка персонажа ${founder.name}`} />
+                <img src={founder.image} width={founder.width} height={founder.height} loading="lazy" decoding="async" alt={`Фигурка персонажа ${founder.name}`} />
               </div>
               <div className="founder-copy"><h3>{founder.name}</h3><p>{founder.description}</p></div>
             </article>
