@@ -71,7 +71,7 @@ a:focus-visible { outline:3px solid currentColor; outline-offset:5px; }
 .founder-card:nth-child(1) .founder-figure img { transform:translateY(1%); }
 .founder-card:nth-child(2) .founder-figure img { transform:translateY(5.3%); }
 .founder-card:nth-child(3) .founder-figure img { max-width:none; width:108%; }
-.founder-card:nth-child(4) .founder-figure img { width:101%; transform:translateY(1.5%); }
+.founder-card:nth-child(4) .founder-figure img { width:106%; transform:translateY(.7%); }
 .founder-copy { position:relative; margin-top:1.1cqw; }
 .founder-copy h3 { font-size:1.78cqw; line-height:1.7; color:var(--red); white-space:nowrap; }
 .founder-copy p { color:#fff9ed; font-size:1.52cqw; line-height:1.14; margin:5px auto 0; max-width:92%; text-wrap:balance; }
@@ -202,7 +202,7 @@ footer>a { justify-self:start; padding:12px 22px; border-radius:999px; backgroun
   .founders-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:30px 16px; margin-top:15px; }
   .founder-figure { height:72cqw; }
   .founder-card:nth-child(3) .founder-figure img { width:100%; max-width:100%; }
-  .founder-card:nth-child(4) .founder-figure img { width:96%; }
+  .founder-card:nth-child(4) .founder-figure img { width:100%; transform:translateY(.7%); }
   .founder-copy { margin-top:10px; }
   .founder-copy h3 { font-size:3.5cqw; }
   .founder-copy p { max-width:100%; font-size:16px; line-height:1.25; margin-top:8px; hyphens:auto; overflow-wrap:anywhere; }
