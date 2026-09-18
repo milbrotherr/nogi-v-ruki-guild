@@ -7,6 +7,10 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = {
   title: 'Гильдия «Ноги в Руки»',
   description: 'История и летописи гильдии игровой и гик-культуры «Ноги в Руки».',
+  icons: {
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  },
 };
 
 export default function RootLayout({

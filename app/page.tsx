@@ -28,7 +28,7 @@ const founders = [
   {
     name: 'Эйдвен',
     description: 'Любознательная путешественница между мирами',
-    image: null,
+    image: 'media/aydwen.png',
   },
 ];
 
@@ -90,13 +90,7 @@ export default function Home() {
           {founders.map((founder) => (
             <article className="founder-card" key={founder.name}>
               <div className="founder-figure">
-                {founder.image ? (
-                  <img src={founder.image} loading="lazy" decoding="async" alt={`Фигурка персонажа ${founder.name}`} />
-                ) : (
-                  <div className="founder-placeholder" role="img" aria-label="Изображение Эйдвен появится позже">
-                    <span>?</span><small>Изображение появится позже</small>
-                  </div>
-                )}
+                <img src={founder.image} loading="lazy" decoding="async" alt={`Фигурка персонажа ${founder.name}`} />
               </div>
               <div className="founder-copy"><h3>{founder.name}</h3><p>{founder.description}</p></div>
             </article>
